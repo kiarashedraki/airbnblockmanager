@@ -1,6 +1,9 @@
 .idea/
+.classpath
 target/
 .gradle/
 build/
+.settings/
+bin/
 myApp.log
 out/
