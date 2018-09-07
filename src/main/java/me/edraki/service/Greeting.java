@@ -1,4 +1,4 @@
-package service;
+package me.edraki.service;
 
 public class Greeting {
 
