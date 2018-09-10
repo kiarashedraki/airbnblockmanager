@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PropertyReader {
 
-    @Value("${mangodbhost}")
+    @Value("${database}")
     public String mangoDbHost;
 
 }

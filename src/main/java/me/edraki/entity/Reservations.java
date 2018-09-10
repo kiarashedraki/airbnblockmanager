@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -48,8 +50,12 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "updated_at",
     "sent_at"
 })
-public class Reservation {
+@Document(collection = "reservations")
+public class Reservations {
 
+    @Id
+    @JsonProperty("_id")
+    private Integer id;
     @JsonProperty("user_id")
     private Integer userId;
     @JsonProperty("code")

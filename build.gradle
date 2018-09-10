@@ -22,14 +22,24 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    dev
+}
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
+    dev("org.springframework.boot:spring-boot-devtools")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.mongodb:mongo-java-driver")
     compile("org.springframework.boot:spring-boot-starter-data-mongodb")
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('com.jayway.jsonpath:json-path')
+
+}
+
+bootRun {
+    // Use Spring Boot DevTool only when we run Gradle bootRun task
+    classpath = sourceSets.main.runtimeClasspath + configurations.dev
 }
 

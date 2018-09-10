@@ -1,13 +1,12 @@
 package me.edraki.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import me.edraki.entity.Reservation;
+import me.edraki.entity.Reservations;
 import me.edraki.service.ReservationRepository;
 import org.bson.Document;
 import org.slf4j.Logger;
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import me.edraki.service.Greeting;
 
 @RestController
+@RequestMapping("/reservations")
 public class GreetingController {
 
     @Autowired
@@ -43,15 +43,15 @@ public class GreetingController {
         Document document = Document.parse(test);
         dbCollection.insertOne(document);
         mongoClient.close();
-
+        logger.info("Test");
         logger.info("Done");
         return test;
     }
 
     @RequestMapping(value = "/lock",method = RequestMethod.GET)
-    public List<Reservation> getFutureReservation(@RequestParam("guest_name") String guestName){
+    public List<Reservations> getFutureReservation(@RequestParam("guest_name") String guestName){
         logger.info("reading the list of reservations from Mongo : " + guestName);
-        List<Reservation> arrayList = repository.findFirstByUserId(7002631);
+        List<Reservations> arrayList = repository.findFirstByUserId(7002631);
         return arrayList;
         }
     }

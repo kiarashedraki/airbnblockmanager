@@ -1,11 +1,9 @@
 package me.edraki;
 
 import me.edraki.service.PropertyReader;
-import org.apache.catalina.core.ApplicationContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
@@ -17,6 +15,7 @@ public class Application {
         System.out.println(context.containsBean("propertyReader"));
         PropertyReader propertyReader =  (PropertyReader) context.getBean("propertyReader");
         System.out.println(propertyReader.mangoDbHost);
+        System.out.println("Test");
 
     }
 }
