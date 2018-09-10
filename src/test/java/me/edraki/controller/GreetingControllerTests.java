@@ -20,6 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,14 +40,14 @@ public class GreetingControllerTests {
     @Test
     public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
 
-        this.mockMvc.perform(get("/reservation/greeting")).andDo(print()).andExpect(status().isOk())
+        this.mockMvc.perform(get("/reservations/greeting")).andDo(print()).andExpect(status().isOk())
                 .andExpect(jsonPath("$.content").value("Hello, World!"));
     }
 
     @Test
     public void paramGreetingShouldReturnTailoredMessage() throws Exception {
 
-        this.mockMvc.perform(get("/reservation/greeting").param("name", "Spring Community"))
+        this.mockMvc.perform(get("/reservations/greeting").param("name", "Spring Community"))
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(jsonPath("$.content").value("Hello, Spring Community!"));
     }
