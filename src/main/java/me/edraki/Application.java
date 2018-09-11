@@ -15,7 +15,5 @@ public class Application {
         System.out.println(context.containsBean("propertyReader"));
         PropertyReader propertyReader =  (PropertyReader) context.getBean("propertyReader");
         System.out.println(propertyReader.mangoDbHost);
-        System.out.println("Test");
-
     }
 }
