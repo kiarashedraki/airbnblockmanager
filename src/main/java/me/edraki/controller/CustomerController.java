@@ -19,8 +19,8 @@ public class CustomerController {
     private CustomerRepository customerRepository;
 
     @RequestMapping(value = "",method = RequestMethod.GET)
-    public List<Customer> customers(@RequestParam(value = "firstName",required = true) String firstName) {
-        return  customerRepository.findByFirstName(firstName);
+    public List<Customer> customers() {
+        return  customerRepository.findAll();
     }
 
     @RequestMapping(value = "",method = RequestMethod.POST)

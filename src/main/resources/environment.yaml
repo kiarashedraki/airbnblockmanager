@@ -1,7 +1,0 @@
-environments:
-  dev:
-    url: http://dev.example.com
-    name: Developer Setup
-  prod:
-    url: http://another.example.com
-    name: My Cool App
