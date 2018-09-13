@@ -1,13 +1,8 @@
-
 package me.edraki.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.data.annotation.Id;
 
 public class Guest {
-
-
     @JsonProperty("id")
     public Integer id;
     @JsonProperty("first_name")
@@ -20,5 +15,4 @@ public class Guest {
     public String location;
     @JsonProperty("phone")
     public String phone;
-
 }
