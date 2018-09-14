@@ -1,8 +1,0 @@
----
-applications:
-- name: gs-rest-me.edraki.service
-  memory: 256M
-  instances: 1
-  host: rest-me.edraki.service
-  domain: guides.spring.io
-  path: build/libs/gs-rest-me.edraki.service-0.1.0.jar
